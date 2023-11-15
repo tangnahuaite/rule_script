@@ -1,5 +1,5 @@
 # NAME: GoogleFCM-补丁
-# IP-CIDR: 41
+# IP-CIDR: 31
 payload:
   - IP-CIDR,142.251.8.188/32,G-FCM,no-resolve
   - IP-CIDR,108.177.97.188/32,G-FCM,no-resolve
