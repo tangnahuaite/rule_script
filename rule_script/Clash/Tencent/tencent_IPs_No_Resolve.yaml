@@ -1,8 +1,8 @@
 # NAME: tencent_AS45090,AS137876,AS133478,AS132591,AS132203
 # UPDATED: 2023-11-16
 payload:
-  - IP-CIDR,58.87.96.0/22,no-resolve
-  - IP-CIDR,58.87.92.0/22,no-resolve
+  - IP-CIDR,58.87.96.0/22
+  - IP-CIDR,58.87.92.0/22
   - IP-CIDR,58.87.88.0/22,no-resolve
   - IP-CIDR,58.87.84.0/22,no-resolve
   - IP-CIDR,58.87.80.0/22,no-resolve
