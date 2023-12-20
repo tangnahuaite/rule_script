@@ -1,6 +1,4 @@
-{
-  "version": 1,
-  "rules": [
+"rules": [
     {
       "domain_suffix": [
         ".000dn.com",
@@ -8,4 +6,3 @@
      ]
     }
   ]
- }
