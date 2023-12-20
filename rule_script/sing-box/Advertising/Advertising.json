@@ -1,5 +1,8 @@
-"domain_suffix": [
-  ".dev"
-  ".000dn.com",
-  ".0013.cc"
+"rules": [
+    {
+      "domain_suffix": [
+".000dn.com",
+".0013.cc"
       ]
+    }
+  ]
