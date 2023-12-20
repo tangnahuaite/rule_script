@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [        
+        "api.swiftgram.app"
+      ]
+    }
+  ]
+}
