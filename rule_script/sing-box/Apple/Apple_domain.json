@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [        
+        "appldnld.apple.com.edgesuite.net",
+        "apple-events.akamaized.net",
+        "appleworldwidedeveloper.hb-api.omtrdc.net",
+        "appleworldwidedeveloper.sc.omtrdc.net",
+        "beatselectronicsllc.tt.omtrdc.net",
+        "e16991.b.akamaiedge.net",
+        "icons.axm-usercontent-apple.com",
+        "lookup-api.apple.com.edgekey.net",
+        "p-events-delivery.akamaized.net"
+      ]
+    }
+  ]
+}
