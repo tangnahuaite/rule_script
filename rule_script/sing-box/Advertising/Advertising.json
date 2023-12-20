@@ -3,10 +3,6 @@
   "rules": [
     {
       "domain_suffix": [
-        ".ambercrow.com",
-        ".amberdub.com",
-        ".smetrics.ambetterofillinois.com",
-        ".0008d6ba2e.com",
 ".000dn.com",
 ".0013.cc",
 ".s8.001fzc.com",
@@ -19,7 +15,7 @@
 ".004809f9da.com",
 ".0082tv.net",
 ".0083334e84.com",
-".0086555.com",
+".0086555.com"
      ]
     }
   ]
