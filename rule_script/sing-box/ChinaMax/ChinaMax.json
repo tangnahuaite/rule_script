@@ -1,3 +1,8 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
 ".168kaifu.com",
 ".17173-inc.com",
 ".17173.net",
@@ -66089,3 +66094,7 @@
 ".xiaoapp.io",
 ".xiaoma.io",
 ".zhixiaochengxu.com"
+        ]
+    }
+  ]
+}
