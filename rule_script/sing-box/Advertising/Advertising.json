@@ -1,8 +1,4 @@
-"rules": [
-    {
-      "domain_suffix": [
-        ".000dn.com",
-        ".0013.cc"
+"domain_suffix": [
+    ".000dn.com",
+    ".0013.cc"
      ]
-    }
-  ]
