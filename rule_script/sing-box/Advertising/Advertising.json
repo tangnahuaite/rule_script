@@ -1,3 +1,8 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
 ".0008d6ba2e.com",
 ".000dn.com",
 ".0013.cc",
@@ -74842,3 +74847,7 @@
 ".zzyy19.top",
 ".zzyy20.top",
 ".a8.zzz-land.com"
+        ]
+    }
+  ]
+}
