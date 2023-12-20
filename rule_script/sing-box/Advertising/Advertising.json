@@ -3,19 +3,8 @@
   "rules": [
     {
       "domain_suffix": [
-".000dn.com",
-".0013.cc",
-".s8.001fzc.com",
-".yn.001fzc.com",
-".001union.com",
-".0024aadd.com",
-".0024ad98dd.com",
-".002777.xyz",
-".003store.com",
-".004809f9da.com",
-".0082tv.net",
-".0083334e84.com",
-".0086555.com"
+        ".000dn.com",
+        ".0013.cc"
      ]
     }
   ]
