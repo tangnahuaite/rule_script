@@ -1,3 +1,7 @@
-"domain_suffix": [
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
         ".ambercrow.com",".amberdub.com",".smetrics.ambetterofillinois.com"
       ]
