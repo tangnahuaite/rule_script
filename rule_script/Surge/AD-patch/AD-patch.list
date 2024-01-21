@@ -1,0 +1,42 @@
+# NAME: AD-patch
+# Microsoft Telemetry
+DOMAIN,client.wns.windows.com
+DOMAIN,browser.events.data.msn.com
+DOMAIN,global.asimov.events.data.trafficmanager.net
+DOMAIN,onedscolprdcus10.centralus.cloudapp.azure.com
+DOMAIN,assets.msn.com
+DOMAIN,web.vortex.data.microsoft.com
+DOMAIN,ntp.msn.com
+DOMAIN,pipe.aria.microsoft.com
+DOMAIN,img-s-msn-com.akamaized.net
+DOMAIN,api.msn.com
+DOMAIN,c.msn.com
+DOMAIN,www.msn.com
+DOMAIN,api.msn.cn
+DOMAIN,pipe.aria.microsoft.cn
+DOMAIN,ntp.msn.cn
+DOMAIN,web.vortex.data.microsoft.cn
+DOMAIN,browser.events.data.msn.cn
+DOMAIN,www.msn.cn
+DOMAIN,assets.msn.cn
+DOMAIN,c.msn.cn
+DOMAIN,microsoft.cn
+# Baidu login
+DOMAIN,passport.baidu.com
+DOMAIN,zt.baidu.com
+# Carrier hijacking
+DOMAIN-SUFFIX,icitymobile.mobi
+DOMAIN-SUFFIX,cmpassport.com
+DOMAIN-SUFFIX,hmrz.wo.cn
+DOMAIN-SUFFIX,nishub1.10010.com
+DOMAIN-SUFFIX,enrichgw.10010.com
+DOMAIN-SUFFIX,wostore.cn
+DOMAIN-SUFFIX,wosms.cn
+DOMAIN-SUFFIX,mail.wo.cn
+DOMAIN-SUFFIX,open.wo.cn
+DOMAIN-SUFFIX,id6.me
+DOMAIN-SUFFIX,e.189.cn
+DOMAIN-SUFFIX,163yun.com
+DOMAIN-SUFFIX,geetest.com
+DOMAIN-SUFFIX,114dev.com
+DOMAIN-SUFFIX,253.com
