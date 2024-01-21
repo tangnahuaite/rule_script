@@ -26,13 +26,10 @@ payload:
   - DOMAIN,passport.baidu.com
   - DOMAIN,zt.baidu.com
 # Carrier hijacking
-  - DOMAIN-SUFFIX,miwifi.com
-  - DOMAIN-SUFFIX,jegotrip.com.cn
   - DOMAIN-SUFFIX,icitymobile.mobi
   - DOMAIN-SUFFIX,cmpassport.com
   - DOMAIN-SUFFIX,hmrz.wo.cn
   - DOMAIN-SUFFIX,nishub1.10010.com
-  - DOMAIN-SUFFIX,nisportal.10010.com
   - DOMAIN-SUFFIX,enrichgw.10010.com
   - DOMAIN-SUFFIX,wostore.cn
   - DOMAIN-SUFFIX,wosms.cn
