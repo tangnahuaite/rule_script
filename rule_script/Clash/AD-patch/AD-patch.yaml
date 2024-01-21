@@ -41,4 +41,6 @@ payload:
   - DOMAIN-SUFFIX,geetest.com
   - DOMAIN-SUFFIX,114dev.com
   - DOMAIN-SUFFIX,253.com
+  # Tencent
+  - DOMAIN-SUFFIX,bugly.qq.com
   
