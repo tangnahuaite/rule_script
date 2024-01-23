@@ -22,7 +22,6 @@ DOMAIN,assets.msn.cn
 DOMAIN,c.msn.cn
 DOMAIN,microsoft.cn
 # Carrier hijacking
-DOMAIN-SUFFIX,icitymobile.mobi
 DOMAIN-SUFFIX,cmpassport.com
 DOMAIN-SUFFIX,hmrz.wo.cn
 DOMAIN-SUFFIX,nishub1.10010.com
