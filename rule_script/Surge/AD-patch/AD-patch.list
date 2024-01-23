@@ -21,9 +21,6 @@ DOMAIN,www.msn.cn
 DOMAIN,assets.msn.cn
 DOMAIN,c.msn.cn
 DOMAIN,microsoft.cn
-# Baidu login
-DOMAIN,passport.baidu.com
-DOMAIN,zt.baidu.com
 # Carrier hijacking
 DOMAIN-SUFFIX,icitymobile.mobi
 DOMAIN-SUFFIX,cmpassport.com
