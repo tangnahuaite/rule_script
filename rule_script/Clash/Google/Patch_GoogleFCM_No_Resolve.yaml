@@ -70,3 +70,4 @@ payload:
   - IP-CIDR,64.233.167.188/32,no-resolve
   - IP-CIDR,64.233.166.188/32,no-resolve
   - IP-CIDR,142.250.102.188/32,no-resolve
+  - IP-CIDR,172.253.62.188/32,no-resolve
