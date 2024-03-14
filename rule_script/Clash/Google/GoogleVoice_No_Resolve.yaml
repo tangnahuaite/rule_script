@@ -1,4 +1,5 @@
 # NAME: GoogleVoice
+payload:
 - DOMAIN,stun.l.google.com
 - DOMAIN,stun1.l.google.com
 - DOMAIN,stun2.l.google.com
