@@ -4,9 +4,10 @@ DOMAIN,stun1.l.google.com
 DOMAIN,stun2.l.google.com
 DOMAIN,stun3.l.google.com
 DOMAIN,stun4.l.google.com
-DOMAIN,voice.telephony.goog
 DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,telephony.goog
 IP-CIDR,74.125.39.0/24,no-resolve
+IP-CIDR,216.239.36.0/24,no-resolve
 IP-CIDR6,2001:4860:4864:2::0/64,no-resolve
