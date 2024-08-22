@@ -38,6 +38,10 @@ payload:
   - DOMAIN-SUFFIX,geetest.com
   - DOMAIN-SUFFIX,114dev.com
   - DOMAIN-SUFFIX,253.com
-  # Tencent
+# /////
+  - DOMAIN-KEYWORD,saasexch
+# Tencent
   - DOMAIN-SUFFIX,bugly.qq.com
-  
+# BaiDu
+  - DOMAIN,passport.baidu.com
+  - DOMAIN,zt.baidu.com
