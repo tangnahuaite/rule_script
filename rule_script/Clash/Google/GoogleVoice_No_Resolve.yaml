@@ -5,6 +5,8 @@ payload:
   - DOMAIN,stun2.l.google.com
   - DOMAIN,stun3.l.google.com
   - DOMAIN,stun4.l.google.com
+  - DOMAIN,lens.l.google.com
+  - DOMAIN,meet.turns.goog
   - DOMAIN-SUFFIX,googleapis.com
   - DOMAIN-SUFFIX,gstatic.com
   - DOMAIN-SUFFIX,googleusercontent.com
