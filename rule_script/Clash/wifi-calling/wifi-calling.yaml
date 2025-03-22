@@ -1,0 +1,16 @@
+# NAME: wifi-calling
+# UPDATED: 2025-03-22
+payload:
+  - AND,((NETWORK,UDP),(DST-PORT,500),(GEOIP,GB,no-resolve))
+  - AND,((NETWORK,UDP),(DST-PORT,4500),(GEOIP,GB,no-resolve))
+  - DOMAIN-SUFFIX,3gppnetwork.org
+  # vodafone_uk
+  - DOMAIN-SUFFIX,entsrv-uk.vodafone.com
+  - DOMAIN-SUFFIX,vuk-gto.prod.ondemandconnectivity.com
+  - IP-CIDR,88.82.0.0/19,no-resolve
+  # CMLink_uk
+  - IP-CIDR,46.68.0.0/17,no-resolve
+  # Giffgaff
+  - DOMAIN-SUFFIX,giffgaff.com
+  - IP-CIDR,87.194.0.0/16,no-resolve
+  
