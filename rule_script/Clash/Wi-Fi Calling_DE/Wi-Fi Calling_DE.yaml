@@ -1,6 +1,6 @@
 # NAME: Wi-Fi Calling_DE
 # UPDATED: 2025-03-23
 payload:
+  - DOMAIN-SUFFIX,mcc262.pub.3gppnetwork.org
   - AND,((NETWORK,UDP),(DST-PORT,500),(GEOIP,DE,no-resolve))
   - AND,((NETWORK,UDP),(DST-PORT,4500),(GEOIP,DE,no-resolve))
-  - DOMAIN-SUFFIX,mcc262.pub.3gppnetwork.org
