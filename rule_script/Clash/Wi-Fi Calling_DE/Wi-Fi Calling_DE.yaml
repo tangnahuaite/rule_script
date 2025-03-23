@@ -2,5 +2,6 @@
 # UPDATED: 2025-03-23
 payload:
   - DOMAIN-SUFFIX,mcc262.pub.3gppnetwork.org
+  - DOMAIN-SUFFIX,mcc460.pub.3gppnetwork.org
   - AND,((GEOIP,DE,no-resolve),(AND,((NETWORK,UDP),(OR,((DST-PORT,500),(DST-PORT,4500))))))
   - IP-CIDR,139.7.2.0/24,no-resolve
