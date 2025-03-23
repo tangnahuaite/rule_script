@@ -1,0 +1,10 @@
+# NAME: Wi-Fi Calling_UK
+DOMAIN-SUFFIX,entsrv-uk.vodafone.com
+DOMAIN-SUFFIX,vuk-gto.prod.ondemandconnectivity.com
+DOMAIN-SUFFIX,giffgaff.com
+DOMAIN-SUFFIX,mcc234.pub.3gppnetwork.org
+AND,((PROTOCOL,UDP), (DEST-PORT,500), (GEOIP,GB,no-resolve))
+AND,((PROTOCOL,UDP), (DEST-PORT,4500), (GEOIP,GB,no-resolve))
+IP-CIDR,88.82.0.0/19,no-resolve
+IP-CIDR,46.68.0.0/17,no-resolve
+IP-CIDR,87.194.0.0/16,no-resolve
