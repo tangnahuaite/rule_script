@@ -5,6 +5,7 @@ payload:
   - DOMAIN-SUFFIX,vuk-gto.prod.ondemandconnectivity.com
   - DOMAIN-SUFFIX,giffgaff.com
   - DOMAIN-SUFFIX,mcc234.pub.3gppnetwork.org
+  - DOMAIN-SUFFIX,mcc460.pub.3gppnetwork.org
   - AND,((GEOIP,GB,no-resolve),(AND,((NETWORK,UDP),(OR,((DST-PORT,500),(DST-PORT,4500))))))
   - IP-CIDR,88.82.0.0/19,no-resolve
   - IP-CIDR,87.194.0.0/16,no-resolve
