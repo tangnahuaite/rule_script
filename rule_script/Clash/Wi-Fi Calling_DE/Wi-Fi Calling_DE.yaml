@@ -4,3 +4,4 @@ payload:
   - DOMAIN-SUFFIX,mcc262.pub.3gppnetwork.org
   - AND,((NETWORK,UDP),(DST-PORT,500),(GEOIP,DE,no-resolve))
   - AND,((NETWORK,UDP),(DST-PORT,4500),(GEOIP,DE,no-resolve))
+  - IP-CIDR,139.7.2.0/24,no-resolve
