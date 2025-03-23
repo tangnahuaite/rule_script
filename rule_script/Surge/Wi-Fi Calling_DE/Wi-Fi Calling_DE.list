@@ -1,4 +1,3 @@
 # NAME: Wi-Fi Calling_DE
 DOMAIN-SUFFIX,mcc262.pub.3gppnetwork.org
-AND,((PROTOCOL,UDP), (DEST-PORT,500), (GEOIP,DE,no-resolve))
-AND,((PROTOCOL,UDP), (DEST-PORT,4500), (GEOIP,DE,no-resolve))
+AND,((GEOIP,DE,no-resolve), (AND,((PROTOCOL,UDP), (OR,((DEST-PORT,500), (DEST-PORT,4500))))))
