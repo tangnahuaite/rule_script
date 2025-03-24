@@ -1,6 +1,7 @@
 # NAME: Wi-Fi Calling_DE
 # UPDATED: 2025-03-23
 payload:
+  - DOMAIN-SUFFIX,lpa.ds.gsma.com
   - DOMAIN-SUFFIX,mcc262.pub.3gppnetwork.org
   - DOMAIN-SUFFIX,mcc460.pub.3gppnetwork.org
   - AND,((GEOIP,DE,no-resolve),(AND,((NETWORK,UDP),(OR,((DST-PORT,500),(DST-PORT,4500))))))
