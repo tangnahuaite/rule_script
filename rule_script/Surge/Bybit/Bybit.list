@@ -1,17 +1,8 @@
 # NAME: Bybit
-DOMAIN-KEYWORD,bybit
-DOMAIN-KEYWORD,myfin
-DOMAIN-KEYWORD,bycsi
-DOMAIN-KEYWORD,bytick
-DOMAIN-KEYWORD,byapis
-DOMAIN-KEYWORD,bycbe
-DOMAIN-KEYWORD,bybdc6
-DOMAIN-KEYWORD,byd3c3
-DOMAIN-KEYWORD,bitverse
-DOMAIN-KEYWORD,appsflyersdk
-DOMAIN-KEYWORD,geetest
-DOMAIN-KEYWORD,byabcde
-DOMAIN-SUFFIX,ipapi.co
-DOMAIN-SUFFIX,ipwho.is
-DOMAIN-SUFFIX,ffe390afd658c19dcbt707e0597b846d.de
-DOMAIN-SUFFIX,ffbbbdc6d3c353211fe2ba39c9f744cd.com
+DOMAIN-SUFFIX,monitor-frontend-collector.a.bybit-aws.com
+DOMAIN-SUFFIX,bybit.com
+DOMAIN-SUFFIX,bybit.biz
+DOMAIN-SUFFIX,bybdc6.com
+DOMAIN-SUFFIX,byabcde.com
+DOMAIN-SUFFIX,byapps.net
+DOMAIN-SUFFIX,byd3c3.com
