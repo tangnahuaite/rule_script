@@ -2,5 +2,5 @@
 DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com
 DOMAIN-SUFFIX,mcc262.pub.3gppnetwork.org
 AND,((DOMAIN-SUFFIX,ls.apple.com), (SUBNET,TYPE:WIFI))
-AND,((GEOIP,DE,no-resolve), (AND,((PROTOCOL,UDP), (OR,((DEST-PORT,500), (DEST-PORT,4500))))))
+AND,((GEOIP,GB,no-resolve), (PROTOCOL,UDP), (OR,((DEST-PORT,500), (DEST-PORT,4500))))
 IP-CIDR,139.7.2.0/24,no-resolve
