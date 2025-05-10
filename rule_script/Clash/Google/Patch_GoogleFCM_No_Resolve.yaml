@@ -108,3 +108,5 @@ payload:
   - IP-CIDR,173.194.218.188/32,no-resolve
   - IP-CIDR,173.194.219.188/32,no-resolve
   - IP-CIDR,209.85.233.188/32,no-resolve
+  - IP-CIDR6,2607:f8b0:4023:c0d::bc/128,no-resolve
+  - IP-CIDR6,2404:6800:4008:c07::bc/128,no-resolve
