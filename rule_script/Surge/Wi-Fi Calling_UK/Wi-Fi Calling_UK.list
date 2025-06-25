@@ -3,7 +3,8 @@ DOMAIN-SUFFIX,entsrv-uk.vodafone.com
 DOMAIN-SUFFIX,vuk-gto.prod.ondemandconnectivity.com
 DOMAIN-SUFFIX,giffgaff.com
 DOMAIN-SUFFIX,mcc234.pub.3gppnetwork.org
-AND,((DOMAIN-SUFFIX,ls.apple.com), (SUBNET,TYPE:WIFI))
+DOMAIN-SUFFIX,ls.apple.com
+# AND,((DOMAIN-SUFFIX,ls.apple.com), (SUBNET,TYPE:WIFI))
 AND,((GEOIP,GB,no-resolve), (PROTOCOL,UDP), (OR,((DEST-PORT,500), (DEST-PORT,4500))))
 IP-CIDR,88.82.0.0/19,no-resolve
 IP-CIDR,46.68.0.0/17,no-resolve
