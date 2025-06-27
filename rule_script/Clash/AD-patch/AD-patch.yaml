@@ -1,5 +1,12 @@
 # NAME: AD-patch
 payload:
+# cdn
+  - DOMAIN-KEYWORD,alikunlun.com
+  - DOMAIN-KEYWORD,qtlcdn.com
+  - DOMAIN-SUFFIX,ks-cdn.com
+  - DOMAIN-SUFFIX,ksyuncdn.com
+  - DOMAIN-SUFFIX,cdngslb.com
+  - DOMAIN-SUFFIX,51yidun.com
 # Microsoft Telemetry
   - DOMAIN,client.wns.windows.com
   - DOMAIN,browser.events.data.msn.com
@@ -38,6 +45,9 @@ payload:
   - DOMAIN-SUFFIX,geetest.com
   - DOMAIN-SUFFIX,114dev.com
   - DOMAIN-SUFFIX,253.com
+  - DOMAIN-SUFFIX,rcs01.5gm.wo.cn
+  - DOMAIN-SUFFIX,mcc460.pub.3gppnetwork.org
+  - DOMAIN,esim.wo.com.cn
 # Tencent
   - DOMAIN-SUFFIX,bugly.qq.com
 # BaiDu
