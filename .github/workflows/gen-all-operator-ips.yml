@@ -59,7 +59,9 @@ jobs:
 
       - name: Commit if any changes
         run: |
-          if git status --porcelain | grep .; then
+          CHANGED=$(git status --porcelain)
+
+          if [ -n "$CHANGED" ]; then
             git add rule_script/Clash/China-Operator_IP/*.yaml
             git commit -m "Update all operator IP YAMLs on $(date -u +'%Y-%m-%d')"
             git push
