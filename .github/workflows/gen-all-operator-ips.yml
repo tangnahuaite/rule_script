@@ -1,0 +1,67 @@
+name: Generate all operator IP YAMLs from gaoyifan/china-operator-ip
+
+on:
+  schedule:
+    - cron: '0 2 * * *'  # 每天 UTC 时间 2 点执行（北京时间 10 点）
+  workflow_dispatch:      # 允许手动触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout your repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Git identity
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+      - name: Download all source txt files
+        run: |
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/cmcc.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/cmcc6.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/unicom.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/unicom6.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/chinanet.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/chinanet6.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/cernet.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/cernet6.txt
+
+      - name: Convert txt files to YAMLs in rule_script/Clash/China-Operator_IP
+        run: |
+          mkdir -p rule_script/Clash/China-Operator_IP
+
+          make_yaml() {
+            local input_file=$1
+            local output_file="rule_script/Clash/China-Operator_IP/$2"
+            local header=$3
+            local cidr_type=$4
+
+            echo "# ${header}" > "${output_file}"
+            echo "payload:" >> "${output_file}"
+            while read -r line; do
+              [ -n "$line" ] && echo "  - ${cidr_type},$line,no-resolve" >> "${output_file}"
+            done < "${input_file}"
+          }
+
+          make_yaml cmcc.txt        cmcc4_No_Resolve.yaml       cmcc4   IP-CIDR
+          make_yaml cmcc6.txt       cmcc6_No_Resolve.yaml       cmcc6   IP-CIDR6
+          make_yaml unicom.txt      cucc4_No_Resolve.yaml       cucc4   IP-CIDR
+          make_yaml unicom6.txt     cucc6_No_Resolve.yaml       cucc6   IP-CIDR6
+          make_yaml chinanet.txt    ctcc4_No_Resolve.yaml       ctcc4   IP-CIDR
+          make_yaml chinanet6.txt   ctcc6_No_Resolve.yaml       ctcc6   IP-CIDR6
+          make_yaml cernet.txt      cernet4_No_Resolve.yaml     cernet4 IP-CIDR
+          make_yaml cernet6.txt     cernet6_No_Resolve.yaml     cernet6 IP-CIDR6
+
+      - name: Commit if any changes
+        run: |
+          if git status --porcelain | grep .; then
+            git add rule_script/Clash/China-Operator_IP/*.yaml
+            git commit -m "Update all operator IP YAMLs on $(date -u +'%Y-%m-%d')"
+            git push
+          else
+            echo "No changes detected."
