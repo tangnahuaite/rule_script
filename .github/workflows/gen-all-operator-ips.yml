@@ -3,17 +3,17 @@ name: Generate all operator IP YAMLs from gaoyifan/china-operator-ip
 on:
   schedule:
     - cron: '0 2 * * *'  # 每天 UTC 时间 2 点执行（北京时间 10 点）
-  workflow_dispatch:      # 允许手动触发
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout your repo
+      - name: Checkout your repo (with push access)
         uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          persist-credentials: true  # ✅ 启用 GitHub Token 写权限
 
       - name: Set up Git identity
         run: |
