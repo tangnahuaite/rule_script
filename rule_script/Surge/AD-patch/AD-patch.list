@@ -1,11 +1,44 @@
 # NAME: AD-patch
+# 网易易盾
+DOMAIN-SUFFIX,51yidun.com
+DOMAIN-SUFFIX,dun.163.com
+DOMAIN-SUFFIX,dun.163yun.com
+# 腾讯天御
+DOMAIN-KEYWORD,tianyu.tencent.com
+DOMAIN-SUFFIX,turingoa.com
+DOMAIN-SUFFIX,sptlogin.com
+# 阿里云风控
+DOMAIN-SUFFIX,riskcontrol.aliyun.com
+DOMAIN-SUFFIX,device.aliyun.com
+DOMAIN-KEYWORD,arms.aliyuncs.com
+# 百度风铃
+DOMAIN-SUFFIX,aip.baidubce.com
+DOMAIN-KEYWORD,risk.baidubce.com
+# 同盾科技
+DOMAIN-SUFFIX,tongdun.net
+DOMAIN-KEYWORD,tdtech
+DOMAIN-KEYWORD,tdsdk
+DOMAIN-KEYWORD,decision.tongdun.cn
+# 数美科技
+DOMAIN-SUFFIX,shumei.com
+DOMAIN-KEYWORD,sdk-shumei
+DOMAIN-KEYWORD,fp.shumei.com
+# 其他常见国产风控平台
+DOMAIN-SUFFIX,qianxin.com
+DOMAIN-SUFFIX,360safe.com
+DOMAIN-SUFFIX,whiteplus.com.cn
+DOMAIN-SUFFIX,yidun.risk.163.com
+# 工具平台与滑块验证
+DOMAIN-SUFFIX,geetest.com
+DOMAIN-KEYWORD,captcha
+DOMAIN-SUFFIX,talkingdata.com
+DOMAIN-SUFFIX,umeng.com
 # cdn
 DOMAIN-KEYWORD,alikunlun.com
 DOMAIN-KEYWORD,qtlcdn.com
 DOMAIN-SUFFIX,ks-cdn.com
 DOMAIN-SUFFIX,ksyuncdn.com
 DOMAIN-SUFFIX,cdngslb.com
-DOMAIN-SUFFIX,51yidun.com
 # Microsoft Telemetry
 DOMAIN,client.wns.windows.com
 DOMAIN,browser.events.data.msn.com
