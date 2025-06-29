@@ -1,5 +1,4 @@
 # NAME: AD-patch
-rules:
 # 拦截行为跟踪、设备指纹、上报分析
 DOMAIN-SUFFIX,fp.f.51yidun.com
 DOMAIN-KEYWORD,inapp-51yidun
