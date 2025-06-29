@@ -30,7 +30,7 @@ rules:
   - DOMAIN-SUFFIX,360safe.com
   - DOMAIN-SUFFIX,whiteplus.com.cn
   - DOMAIN-SUFFIX,yidun.risk.163.com
-# 工具平台与滑块验证（可选）
+# 工具平台与滑块验证
   - DOMAIN-SUFFIX,geetest.com
   - DOMAIN-KEYWORD,captcha
   - DOMAIN-SUFFIX,talkingdata.com
