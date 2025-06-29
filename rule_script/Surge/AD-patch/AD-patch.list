@@ -1,38 +1,21 @@
 # NAME: AD-patch
-# 网易易盾
-DOMAIN-SUFFIX,51yidun.com
-DOMAIN-SUFFIX,dun.163.com
-DOMAIN-SUFFIX,dun.163yun.com
-# 腾讯天御
-DOMAIN-KEYWORD,tianyu.tencent.com
-DOMAIN-SUFFIX,turingoa.com
-DOMAIN-SUFFIX,sptlogin.com
-# 阿里云风控
-DOMAIN-SUFFIX,riskcontrol.aliyun.com
-DOMAIN-SUFFIX,device.aliyun.com
-DOMAIN-KEYWORD,arms.aliyuncs.com
-# 百度风铃
-DOMAIN-SUFFIX,aip.baidubce.com
-DOMAIN-KEYWORD,risk.baidubce.com
-# 同盾科技
+rules:
+# 拦截行为跟踪、设备指纹、上报分析
+DOMAIN-SUFFIX,fp.f.51yidun.com
+DOMAIN-KEYWORD,inapp-51yidun
+DOMAIN-SUFFIX,c.dun.163.com
+DOMAIN-SUFFIX,c.dun.163yun.com
+DOMAIN-SUFFIX,log.dun.163.com
+# 同盾科技（风控常客，拦截指纹与评分服务）
 DOMAIN-SUFFIX,tongdun.net
-DOMAIN-KEYWORD,tdtech
 DOMAIN-KEYWORD,tdsdk
 DOMAIN-KEYWORD,decision.tongdun.cn
-# 数美科技
+# 数美科技（广告与风控结合，常见于滑块和行为监控）
 DOMAIN-SUFFIX,shumei.com
-DOMAIN-KEYWORD,sdk-shumei
 DOMAIN-KEYWORD,fp.shumei.com
-# 其他常见国产风控平台
-DOMAIN-SUFFIX,qianxin.com
-DOMAIN-SUFFIX,360safe.com
-DOMAIN-SUFFIX,whiteplus.com.cn
-DOMAIN-SUFFIX,yidun.risk.163.com
-# 工具平台与滑块验证
-DOMAIN-SUFFIX,geetest.com
-DOMAIN-KEYWORD,captcha
-DOMAIN-SUFFIX,talkingdata.com
+# 工具类统计（行为分析，不建议放行）
 DOMAIN-SUFFIX,umeng.com
+DOMAIN-SUFFIX,talkingdata.com
 # cdn
 DOMAIN-KEYWORD,alikunlun.com
 DOMAIN-KEYWORD,qtlcdn.com
