@@ -2,7 +2,7 @@ name: Generate all operator IP YAMLs and LISTs
 
 on:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 2 * * *'  # 每天 UTC 时间 2 点执行（北京时间 10 点）
   workflow_dispatch:
 
 jobs:
@@ -10,34 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 检出仓库
       - name: Checkout your repo (with push access)
         uses: actions/checkout@v4
         with:
-          persist-credentials: true
+          persist-credentials: true  # 启用 GITHUB_TOKEN 写权限
+
+      # 设置 Git 用户名和邮箱
       - name: Set up Git identity
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-
-      # 创建 .gitignore 文件并忽略临时 .txt 文件
-      - name: Create .gitignore for temp files if not exists
-        run: |
-          echo "Creating .gitignore for temp .txt files..."
-          cat <<EOF > .gitignore
-# 临时下载的源 IP 列表
-cmcc.txt
-cmcc6.txt
-unicom.txt
-unicom6.txt
-chinanet.txt
-chinanet6.txt
-cernet.txt
-cernet6.txt
-
-# 可选：系统文件
-.DS_Store
-*.swp
-EOF
 
       # 下载所有源 IP 列表
       - name: Download all source txt files
@@ -117,9 +100,7 @@ EOF
           CHANGED=$(git status --porcelain rule_script/Clash rule_script/Surge)
 
           if [ -n "$CHANGED" ]; then
-            git add .gitignore
-            git add rule_script/Clash/China-Operator_IP/*.yaml
-            git add rule_script/Surge/China-Operator_IP/*.list
+            git add .  # 提交所有更改（包括 .txt、.yaml 和 .list 文件）
             git commit -m "Update all operator IP files on $(date -u +'%Y-%m-%d')" || echo "Nothing to commit."
             git push
           else
