@@ -13,31 +13,12 @@ jobs:
       - name: Checkout your repo (with push access)
         uses: actions/checkout@v4
         with:
-          persist-credentials: true
+          persist-credentials: true  # ✅ 启用 GITHUB_TOKEN 写权限
 
       - name: Set up Git identity
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-
-      - name: Create .gitignore for temp files if not exists
-        run: |
-          echo "Creating .gitignore for temp .txt files..."
-          cat <<EOF > .gitignore
-# 临时下载的源 IP 列表
-cmcc.txt
-cmcc6.txt
-unicom.txt
-unicom6.txt
-chinanet.txt
-chinanet6.txt
-cernet.txt
-cernet6.txt
-
-# 可选：系统文件
-.DS_Store
-*.swp
-EOF
 
       - name: Download all source txt files
         run: |
@@ -110,13 +91,12 @@ EOF
 
       - name: Commit if any changes
         run: |
-          CHANGED=$(git status --porcelain rule_script/Clash rule_script/Surge)
+          CHANGED=$(git status --porcelain)
 
           if [ -n "$CHANGED" ]; then
-            git add .gitignore
             git add rule_script/Clash/China-Operator_IP/*.yaml
             git add rule_script/Surge/China-Operator_IP/*.list
-            git commit -m "Update all operator IP files on $(date -u +'%Y-%m-%d')" || echo "Nothing to commit."
+            git commit -m "Update all operator IP files on $(date -u +'%Y-%m-%d')"
             git push
           else
             echo "No changes detected."
