@@ -2,7 +2,7 @@ name: Generate all operator IP YAMLs and LISTs
 
 on:
   schedule:
-    - cron: '0 2 * * *'  # 每天 UTC 时间 2 点执行（北京时间 10 点）
+    - cron: '0 2 * * *'
   workflow_dispatch:
 
 jobs:
@@ -10,13 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 检出仓库
       - name: Checkout your repo (with push access)
         uses: actions/checkout@v4
         with:
-          persist-credentials: true  # 启用 GITHUB_TOKEN 写权限
-
-      # 设置 Git 用户名和邮箱
+          persist-credentials: true
       - name: Set up Git identity
         run: |
           git config --global user.name 'github-actions[bot]'
