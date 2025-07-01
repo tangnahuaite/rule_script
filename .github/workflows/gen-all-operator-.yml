@@ -1,4 +1,4 @@
-name: Generate all operator
+name: Generate all operator IP YAMLs and LISTs
 
 on:
   schedule:
