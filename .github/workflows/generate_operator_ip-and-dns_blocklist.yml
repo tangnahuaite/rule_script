@@ -1,79 +1,139 @@
-#!/bin/bash
+name: Generate all operator IP YAMLs and DNS blocklists
 
-# 删除并重新创建目标目录
-make_dirs() {
-  local dir=$1
-  if [ -d "$dir" ]; then
-    rm -rf "$dir"  # 删除目录及其所有内容
-  fi
-  mkdir -p "$dir"  # 创建目录
-}
+on:
+  schedule:
+    - cron: '0 2 * * *'  # 每天 UTC 时间 2 点执行（北京时间 10 点）
+  workflow_dispatch:
 
-# 创建目标目录
-make_dirs "rule_script/Clash/China-Operator_IP"
-make_dirs "rule_script/Surge/China-Operator_IP"
-make_dirs "dns_script/Clash"
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-# 转换 IP 地址列表，生成 YAML 文件
-make_yaml() {
-  local input_file=$1
-  local output_file="rule_script/Clash/China-Operator_IP/$2"
-  local header=$3
-  local cidr_type=$4
+    steps:
+      # 检出仓库
+      - name: Checkout your repo (with push access)
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true  # 启用 GITHUB_TOKEN 写权限
 
-  echo "# ${header}" > "${output_file}"
-  echo "payload:" >> "${output_file}"
+      # 设置 Git 用户名和邮箱
+      - name: Set up Git identity
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
-  # 使用 xargs 代替 while read，提高处理速度
-  cat "$input_file" | xargs -I {} echo "  - ${cidr_type},{}" >> "${output_file}"
-}
+      # 下载所有源 IP 列表
+      - name: Download all source txt files
+        run: |
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/cmcc.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/cmcc6.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/unicom.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/unicom6.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/chinanet.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/chinanet6.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/cernet.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/cernet6.txt
+          # 下载 TikTok 广告域名列表
+          curl -sLO https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.tiktok.extended-onlydomains.txt
+          # 下载 Microsoft 域名列表
+          curl -sLO https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.winoffice-onlydomains.txt
+          # 下载 Ads 域名列表
+          curl -sLO https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/popupads-onlydomains.txt
 
-# 转换 IP 地址列表，生成 LIST 文件
-make_list() {
-  local input_file=$1
-  local output_file="rule_script/Surge/China-Operator_IP/$2"
-  local header=$3
-  local cidr_type=$4
+      # 转换成 YAML 和 LIST 格式，并生成 nameserver-policy 格式
+      - name: Convert to YAML, LIST, and nameserver-policy formats
+        run: |
+          # 删除并重新创建目标目录
+          make_dirs() {
+            local dir=$1
+            if [ -d "$dir" ]; then
+              rm -rf "$dir/*"  # 删除目录下的所有文件，保留目录结构
+            else
+              mkdir -p "$dir"  # 如果目录不存在，则创建它
+            fi
+          }
 
-  echo "# ${header}" > "${output_file}"
+          # 创建目标目录
+          make_dirs "rule_script/Clash/China-Operator_IP"
+          make_dirs "rule_script/Surge/China-Operator_IP"
+          make_dirs "dns_script/Clash"
 
-  # 使用 xargs 代替 while read，提高处理速度
-  cat "$input_file" | xargs -I {} echo "${cidr_type},{}" >> "${output_file}"
-}
+          make_yaml() {
+            local input_file=$1
+            local output_file="rule_script/Clash/China-Operator_IP/$2"
+            local header=$3
+            local cidr_type=$4
 
-# 转换 DNS Blocklist 列表，生成 DNS 规则
-make_nameserver_policy() {
-  local input_file=$1
-  local output_file="dns_script/Clash/DNS-Blocklist.txt"
-  local header=$2
+            echo "# ${header}" > "${output_file}"
+            echo "payload:" >> "${output_file}"
+            while read -r line; do
+              [ -n "$line" ] && echo "  - ${cidr_type},$line,no-resolve" >> "${output_file}"
+            done < "${input_file}"
+          }
 
-  echo "# ${header}" >> "${output_file}"
+          make_list() {
+            local input_file=$1
+            local output_file="rule_script/Surge/China-Operator_IP/$2"
+            local header=$3
+            local cidr_type=$4
 
-  # 使用 xargs 代替 while read，跳过空行和注释行
-  cat "$input_file" | grep -v '^#' | grep -v '^$' | xargs -I {} bash -c 'domain=$(echo {} | sed "s|^local=||"); echo "  $domain: rule-set:default-dns" >> "$0"; echo "  ++.$domain: rule-set:default-dns" >> "$0"' "$output_file"
-}
+            echo "# ${header}" > "${output_file}"
+            while read -r line; do
+              [ -n "$line" ] && echo "${cidr_type},$line,no-resolve" >> "${output_file}"
+            done < "${input_file}"
+          }
 
-# 转换 TikTok 广告域名列表
-make_nameserver_policy native.tiktok.extended.txt "tiktok"
-# 转换 Microsoft 域名列表
-make_nameserver_policy native.winoffice.txt "Microsoft"
-# 转换 Ads 域名列表
-make_nameserver_policy popupads.txt "Ads"
+          make_nameserver_policy() {
+            local input_file=$1
+            local output_file="dns_script/Clash/DNS-Blocklist.txt"
+            local header=$2
 
-# 其他 IP 列表转换
-make_yaml cmcc.txt        cmcc4_No_Resolve.yaml       cmcc4   IP-CIDR
-make_list cmcc.txt        cmcc4_No_Resolve.list       cmcc4   IP-CIDR
-make_yaml cmcc6.txt       cmcc6_No_Resolve.yaml       cmcc6   IP-CIDR6
-make_list cmcc6.txt       cmcc6_No_Resolve.list       cmcc6   IP-CIDR6
-make_yaml unicom.txt      cucc4_No_Resolve.yaml       cucc4   IP-CIDR
-make_list unicom.txt      cucc4_No_Resolve.list       cucc4   IP-CIDR
-make_yaml unicom6.txt     cucc6_No_Resolve.yaml       cucc6   IP-CIDR6
-make_list unicom6.txt     cucc6_No_Resolve.list       cucc6   IP-CIDR6
-make_yaml chinanet.txt    ctcc4_No_Resolve.yaml       ctcc4   IP-CIDR
-make_list chinanet.txt    ctcc4_No_Resolve.list       ctcc4   IP-CIDR
-make_yaml chinanet6.txt   ctcc6_No_Resolve.yaml       ctcc6   IP-CIDR6
-make_list chinanet6.txt   ctcc6_No_Resolve.list       ctcc6   IP-CIDR6
-make_yaml cernet.txt      cernet4_No_Resolve.yaml     cernet4 IP-CIDR
-make_list cernet.txt      cernet4_No_Resolve.list     cernet4 IP-CIDR
-make_yaml cernet6.txt     cernet6_No_Resolve.yaml     cernet6 IP-CIDR6
-make_list cernet6.txt     cernet6_No_Resolve.list     cernet6 IP-CIDR6
+            echo "# ${header}" >> "${output_file}"
+            while read -r line; do
+              [ -n "$line" ] && {
+                # 主域名
+                echo "  \"$line\": rcode://success" >> "${output_file}"
+                # 子域名（匹配所有子域）
+                echo "  \"++.$line\": rcode://success" >> "${output_file}"
+              }
+            done < "${input_file}"
+          }
+
+          # 转换 TikTok 广告域名列表
+          make_nameserver_policy native.tiktok.extended.txt "tiktok"
+          # 转换 Microsoft 域名列表
+          make_nameserver_policy native.winoffice.txt "Microsoft"
+          # 转换 Ads 域名列表
+          make_nameserver_policy popupads.txt "Ads"
+
+          # 其他 IP 列表转换
+          make_yaml cmcc.txt        cmcc4_No_Resolve.yaml       cmcc4   IP-CIDR
+          make_list cmcc.txt        cmcc4_No_Resolve.list       cmcc4   IP-CIDR
+          make_yaml cmcc6.txt       cmcc6_No_Resolve.yaml       cmcc6   IP-CIDR6
+          make_list cmcc6.txt       cmcc6_No_Resolve.list       cmcc6   IP-CIDR6
+          make_yaml unicom.txt      cucc4_No_Resolve.yaml       cucc4   IP-CIDR
+          make_list unicom.txt      cucc4_No_Resolve.list       cucc4   IP-CIDR
+          make_yaml unicom6.txt     cucc6_No_Resolve.yaml       cucc6   IP-CIDR6
+          make_list unicom6.txt     cucc6_No_Resolve.list       cucc6   IP-CIDR6
+          make_yaml chinanet.txt    ctcc4_No_Resolve.yaml       ctcc4   IP-CIDR
+          make_list chinanet.txt    ctcc4_No_Resolve.list       ctcc4   IP-CIDR
+          make_yaml chinanet6.txt   ctcc6_No_Resolve.yaml       ctcc6   IP-CIDR6
+          make_list chinanet6.txt   ctcc6_No_Resolve.list       ctcc6   IP-CIDR6
+          make_yaml cernet.txt      cernet4_No_Resolve.yaml     cernet4 IP-CIDR
+          make_list cernet.txt      cernet4_No_Resolve.list     cernet4 IP-CIDR
+          make_yaml cernet6.txt     cernet6_No_Resolve.yaml     cernet6 IP-CIDR6
+          make_list cernet6.txt     cernet6_No_Resolve.list     cernet6 IP-CIDR6
+
+      # 提交更改
+      - name: Commit if any changes
+        run: |
+          # 获取已经生成的文件
+          CHANGED=$(git status --porcelain rule_script/Clash rule_script/Surge dns_script)
+
+          if [ -n "$CHANGED" ]; then
+            git add .  # 提交所有更改（包括 .txt、.yaml 和 .list 文件）
+            git commit -m "Update all operator IP files, TikTok blocklist, Microsoft blocklist, and Ads blocklist on $(date -u +'%Y-%m-%d')" || echo "Nothing to commit."
+            git push
+          else
+            echo "No changes detected."
+          fi
