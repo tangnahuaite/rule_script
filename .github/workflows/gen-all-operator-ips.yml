@@ -34,6 +34,35 @@ jobs:
           curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/cernet.txt
           curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/cernet6.txt
 
+      # 下载并处理 adblock-for-dnsmasq.conf 文件
+      - name: Download and process adblock-for-dnsmasq.conf
+        run: |
+          # 拉取 adblock-for-dnsmasq.conf 文件
+          curl -s https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/adblock-for-dnsmasq.conf -o adblock-for-dnsmasq.conf
+
+          # 处理源数据，忽略注释并转换为 Clash 格式
+          python3 -c "
+import re
+
+# 读取源文件
+with open('adblock-for-dnsmasq.conf', 'r') as f:
+    lines = f.readlines()
+
+# 过滤掉注释行并提取 address = /xxx/ 行
+filtered_lines = []
+for line in lines:
+    # 去除注释行
+    line = line.split('#')[0].strip()
+    if line.startswith('address='):
+        # 提取域名并修改格式
+        domain = re.sub(r'address=/([^/]+)', r'\"\1\"\n\"\1++\"', line)
+        filtered_lines.append(domain)
+
+# 输出到 DNS-Blocklist.txt 文件
+with open('dns_script/Clash/DNS-Blocklist.txt', 'w') as f:
+    f.writelines([line + '\n' for line in filtered_lines])
+"
+
       # 转换成 YAML 和 LIST 格式
       - name: Convert to YAML and LIST formats
         run: |
@@ -97,11 +126,11 @@ jobs:
       - name: Commit if any changes
         run: |
           # 获取已经生成的文件
-          CHANGED=$(git status --porcelain rule_script/Clash rule_script/Surge)
+          CHANGED=$(git status --porcelain rule_script/Clash rule_script/Surge dns_script)
 
           if [ -n "$CHANGED" ]; then
             git add .  # 提交所有更改（包括 .txt、.yaml 和 .list 文件）
-            git commit -m "Update all operator IP files on $(date -u +'%Y-%m-%d')" || echo "Nothing to commit."
+            git commit -m "Update all operator IP files and DNS Blocklist on $(date -u +'%Y-%m-%d')" || echo "Nothing to commit."
             git push
           else
             echo "No changes detected."
