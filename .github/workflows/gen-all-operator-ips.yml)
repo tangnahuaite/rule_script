@@ -1,0 +1,108 @@
+name: Generate all operator IP YAMLs and LISTs
+
+on:
+  schedule:
+    - cron: '0 2 * * *'  # 每天 UTC 时间 2 点执行（北京时间 10 点）
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 检出仓库
+      - name: Checkout your repo (with push access)
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true  # 启用 GITHUB_TOKEN 写权限
+
+      # 设置 Git 用户名和邮箱
+      - name: Set up Git identity
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+      # 下载所有源 IP 列表
+      - name: Download all source txt files
+        run: |
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/cmcc.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/cmcc6.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/unicom.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/unicom6.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/chinanet.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/chinanet6.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/cernet.txt
+          curl -sLO https://raw.githubusercontent.com/gaoyifan/china-operator-ip/refs/heads/ip-lists/cernet6.txt
+
+      # 转换成 YAML 和 LIST 格式
+      - name: Convert to YAML and LIST formats
+        run: |
+          mkdir -p rule_script/Clash/China-Operator_IP
+          mkdir -p rule_script/Surge/China-Operator_IP
+
+          make_yaml() {
+            local input_file=$1
+            local output_file="rule_script/Clash/China-Operator_IP/$2"
+            local header=$3
+            local cidr_type=$4
+
+            echo "# ${header}" > "${output_file}"
+            echo "payload:" >> "${output_file}"
+            while read -r line; do
+              [ -n "$line" ] && echo "  - ${cidr_type},$line,no-resolve" >> "${output_file}"
+            done < "${input_file}"
+          }
+
+          make_list() {
+            local input_file=$1
+            local output_file="rule_script/Surge/China-Operator_IP/$2"
+            local header=$3
+            local cidr_type=$4
+
+            echo "# ${header}" > "${output_file}"
+            while read -r line; do
+              [ -n "$line" ] && echo "${cidr_type},$line,no-resolve" >> "${output_file}"
+            done < "${input_file}"
+          }
+
+          # cmcc
+          make_yaml cmcc.txt        cmcc4_No_Resolve.yaml       cmcc4   IP-CIDR
+          make_list cmcc.txt        cmcc4_No_Resolve.list       cmcc4   IP-CIDR
+
+          make_yaml cmcc6.txt       cmcc6_No_Resolve.yaml       cmcc6   IP-CIDR6
+          make_list cmcc6.txt       cmcc6_No_Resolve.list       cmcc6   IP-CIDR6
+
+          # cucc
+          make_yaml unicom.txt      cucc4_No_Resolve.yaml       cucc4   IP-CIDR
+          make_list unicom.txt      cucc4_No_Resolve.list       cucc4   IP-CIDR
+
+          make_yaml unicom6.txt     cucc6_No_Resolve.yaml       cucc6   IP-CIDR6
+          make_list unicom6.txt     cucc6_No_Resolve.list       cucc6   IP-CIDR6
+
+          # ctcc
+          make_yaml chinanet.txt    ctcc4_No_Resolve.yaml       ctcc4   IP-CIDR
+          make_list chinanet.txt    ctcc4_No_Resolve.list       ctcc4   IP-CIDR
+
+          make_yaml chinanet6.txt   ctcc6_No_Resolve.yaml       ctcc6   IP-CIDR6
+          make_list chinanet6.txt   ctcc6_No_Resolve.list       ctcc6   IP-CIDR6
+
+          # cernet
+          make_yaml cernet.txt      cernet4_No_Resolve.yaml     cernet4 IP-CIDR
+          make_list cernet.txt      cernet4_No_Resolve.list     cernet4 IP-CIDR
+
+          make_yaml cernet6.txt     cernet6_No_Resolve.yaml     cernet6 IP-CIDR6
+          make_list cernet6.txt     cernet6_No_Resolve.list     cernet6 IP-CIDR6
+
+      # 提交更改
+      - name: Commit if any changes
+        run: |
+          # 获取已经生成的文件
+          CHANGED=$(git status --porcelain rule_script/Clash rule_script/Surge)
+
+          if [ -n "$CHANGED" ]; then
+            git add .  # 提交所有更改（包括 .txt、.yaml 和 .list 文件）
+            git commit -m "Update all operator IP files on $(date -u +'%Y-%m-%d')" || echo "Nothing to commit."
+            git push
+          else
+            echo "No changes detected."
+          fi
