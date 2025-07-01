@@ -1,0 +1,76 @@
+name: Update DNS Blocklist
+
+on:
+  schedule:
+    # 每日 UTC 0 点触发
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # 可以手动触发工作流
+
+jobs:
+  update-dns-blocklist:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout 仓库
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 创建目标目录（如果不存在）
+      - name: Create target directory
+        run: |
+          mkdir -p dns_script/Clash
+
+      # 拉取源数据
+      - name: Fetch DNS Blocklist
+        run: |
+          curl -s https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/adblock-for-dnsmasq.conf -o adblock-for-dnsmasq.conf
+
+      # 处理源数据
+      - name: Process DNS Blocklist
+        run: |
+          python3 -c "
+import re
+
+# 读取源文件
+with open('adblock-for-dnsmasq.conf', 'r') as f:
+    lines = f.readlines()
+
+# 过滤掉注释行并提取 address = /xxx/ 行
+filtered_lines = []
+for line in lines:
+    # 去除注释行
+    line = line.split('#')[0].strip()
+    if line.startswith('address='):
+        # 提取域名并修改格式
+        domain = re.sub(r'address=/([^/]+)', r'\"\1\"\n\"\1++\"', line)
+        filtered_lines.append(domain)
+
+# 输出到新的文件
+with open('dns_script/Clash/DNS-Blocklist.txt', 'w') as f:
+    f.writelines([line + '\n' for line in filtered_lines])
+"
+
+      # 检查文件是否有变化
+      - name: Check for file changes
+        run: |
+          git diff --quiet dns_script/Clash/DNS-Blocklist.txt
+
+      # 提交更改并推送到仓库
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          
+          # 检查哪些文件被修改
+          git status
+
+          # 确保只添加 dns_script/Clash/DNS-Blocklist.txt 文件
+          git add dns_script/Clash/DNS-Blocklist.txt
+
+          # 确保没有误提交工作流文件
+          git status
+
+          # 检查暂存区的更改，并提交
+          git diff --cached --quiet || (
+            git commit -m "Update DNS Blocklist" && git push
+          )
