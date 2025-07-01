@@ -1,4 +1,4 @@
-name: Generate all operator IP YAMLs and LISTs
+name: Generate all operator
 
 on:
   schedule:
@@ -43,9 +43,20 @@ jobs:
       # 转换成 YAML 和 LIST 格式，并生成 nameserver-policy 格式
       - name: Convert to YAML, LIST, and nameserver-policy formats
         run: |
-          mkdir -p rule_script/Clash/China-Operator_IP
-          mkdir -p rule_script/Surge/China-Operator_IP
-          mkdir -p dns_script/Clash
+          # 删除并重新创建目标目录
+          make_dirs() {
+            local dir=$1
+            if [ -d "$dir" ]; then
+              rm -rf "$dir/*"  # 删除目录下所有文件
+            else
+              mkdir -p "$dir"  # 创建目录
+            fi
+          }
+
+          # 创建目标目录
+          make_dirs "rule_script/Clash/China-Operator_IP"
+          make_dirs "rule_script/Surge/China-Operator_IP"
+          make_dirs "dns_script/Clash"
 
           make_yaml() {
             local input_file=$1
