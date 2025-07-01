@@ -60,7 +60,14 @@ with open('dns_script/Clash/DNS-Blocklist.txt', 'w') as f:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
+          
+          # 确保只添加 dns_script/Clash/DNS-Blocklist.txt 文件
           git add dns_script/Clash/DNS-Blocklist.txt
+
+          # 查看已暂存的文件
+          git status
+
+          # 检查是否有变更并提交
           git diff --cached --quiet || (
             git commit -m "Update DNS Blocklist" && git push
           )
