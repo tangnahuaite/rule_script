@@ -47,10 +47,9 @@ jobs:
           make_dirs() {
             local dir=$1
             if [ -d "$dir" ]; then
-              rm -rf "$dir/*"  # 删除目录下所有文件
-            else
-              mkdir -p "$dir"  # 创建目录
+              rm -rf "$dir"  # 删除目录及其所有内容
             fi
+            mkdir -p "$dir"  # 创建目录
           }
 
           # 创建目标目录
@@ -135,5 +134,4 @@ jobs:
             git commit -m "Update all operator IP files, TikTok blocklist, Microsoft blocklist, and Ads blocklist on $(date -u +'%Y-%m-%d')" || echo "Nothing to commit."
             git push
           else
-            echo "No changes detected."
-          fi
+            echo "No changes det
