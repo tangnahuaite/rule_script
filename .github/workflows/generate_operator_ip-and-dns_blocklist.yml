@@ -47,9 +47,10 @@ jobs:
           make_dirs() {
             local dir=$1
             if [ -d "$dir" ]; then
-              rm -rf "$dir"  # 删除目录及其所有内容
+              rm -rf "$dir/*"  # 删除目录下的所有文件，保留目录结构
+            else
+              mkdir -p "$dir"  # 如果目录不存在，则创建它
             fi
-            mkdir -p "$dir"  # 创建目录
           }
 
           # 创建目标目录
