@@ -114,7 +114,6 @@ payload:
   - IP-CIDR6,240a:2001:1861::/48,no-resolve
   - IP-CIDR6,240a:6001::/48,no-resolve
   - IP-CIDR6,240c:409f::/46,no-resolve
-  - IP-CIDR6,240c:409f:3000::/45,no-resolve
   - IP-CIDR6,240c:409f:4000::/45,no-resolve
   - IP-CIDR6,240e::/20,no-resolve
   - IP-CIDR6,2605:9d80:8001::/48,no-resolve
