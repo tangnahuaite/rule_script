@@ -1731,6 +1731,7 @@ IP-CIDR,220.231.128.0/17,no-resolve
 IP-CIDR,220.243.144.0/20,no-resolve
 IP-CIDR,220.243.160.0/20,no-resolve
 IP-CIDR,221.122.0.0/16,no-resolve
+IP-CIDR,221.123.112.0/20,no-resolve
 IP-CIDR,221.123.128.0/17,no-resolve
 IP-CIDR,221.133.225.0/24,no-resolve
 IP-CIDR,221.133.226.0/24,no-resolve
