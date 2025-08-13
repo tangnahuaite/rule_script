@@ -614,7 +614,6 @@ IP-CIDR,106.13.244.0/22,no-resolve
 IP-CIDR,106.13.248.0/21,no-resolve
 IP-CIDR,106.16.0.0/14,no-resolve
 IP-CIDR,106.32.0.0/12,no-resolve
-IP-CIDR,106.48.0.0/21,no-resolve
 IP-CIDR,106.48.16.0/21,no-resolve
 IP-CIDR,106.56.0.0/14,no-resolve
 IP-CIDR,106.60.0.0/15,no-resolve
