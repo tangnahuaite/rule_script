@@ -418,6 +418,7 @@ IP-CIDR,103.78.60.0/22,no-resolve
 IP-CIDR,103.78.126.0/23,no-resolve
 IP-CIDR,103.78.228.0/22,no-resolve
 IP-CIDR,103.79.200.0/22,no-resolve
+IP-CIDR,103.79.228.0/23,no-resolve
 IP-CIDR,103.81.48.0/22,no-resolve
 IP-CIDR,103.82.224.0/22,no-resolve
 IP-CIDR,103.83.44.0/22,no-resolve
