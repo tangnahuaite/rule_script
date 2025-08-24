@@ -246,7 +246,6 @@ payload:
   - IP-CIDR6,2408:8406:b4c0::/42,no-resolve
   - IP-CIDR6,2408:8406:b500::/41,no-resolve
   - IP-CIDR6,2408:8406:b580::/42,no-resolve
-  - IP-CIDR6,2408:8407:500::/43,no-resolve
   - IP-CIDR6,2408:8409::/40,no-resolve
   - IP-CIDR6,2408:8409:100::/41,no-resolve
   - IP-CIDR6,2408:8409:180::/42,no-resolve
