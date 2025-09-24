@@ -22,7 +22,7 @@ payload:
   - IP-CIDR6,2400:9380:9009::/48,no-resolve
   - IP-CIDR6,2400:9380:900a::/48,no-resolve
   - IP-CIDR6,2400:9380:9020::/47,no-resolve
-  - IP-CIDR6,2400:9380:9040::/47,no-resolve
+  - IP-CIDR6,2400:9380:9040::/48,no-resolve
   - IP-CIDR6,2400:9380:9050::/47,no-resolve
   - IP-CIDR6,2400:9380:9060::/48,no-resolve
   - IP-CIDR6,2400:9380:9071::/48,no-resolve
@@ -146,7 +146,6 @@ payload:
   - IP-CIDR6,2a04:f580:9060::/48,no-resolve
   - IP-CIDR6,2a04:f580:9070::/48,no-resolve
   - IP-CIDR6,2a04:f580:9080::/48,no-resolve
-  - IP-CIDR6,2a04:f580:9090::/48,no-resolve
   - IP-CIDR6,2a04:f580:9210::/48,no-resolve
   - IP-CIDR6,2a04:f580:9212::/47,no-resolve
   - IP-CIDR6,2a04:f580:9220::/48,no-resolve
