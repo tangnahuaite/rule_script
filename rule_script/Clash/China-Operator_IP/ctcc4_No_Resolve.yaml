@@ -525,9 +525,8 @@ payload:
   - IP-CIDR,103.212.4.0/22,no-resolve
   - IP-CIDR,103.212.48.0/23,no-resolve
   - IP-CIDR,103.212.109.0/24,no-resolve
-  - IP-CIDR,103.213.48.0/23,no-resolve
-  - IP-CIDR,103.213.50.0/24,no-resolve
-  - IP-CIDR,103.213.62.0/23,no-resolve
+  - IP-CIDR,103.213.48.0/22,no-resolve
+  - IP-CIDR,103.213.60.0/22,no-resolve
   - IP-CIDR,103.213.88.0/21,no-resolve
   - IP-CIDR,103.213.96.0/22,no-resolve
   - IP-CIDR,103.213.132.0/22,no-resolve
