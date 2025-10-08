@@ -16,6 +16,7 @@ payload:
   - IP-CIDR,27.40.0.0/13,no-resolve
   - IP-CIDR,27.50.128.0/17,no-resolve
   - IP-CIDR,27.98.224.0/19,no-resolve
+  - IP-CIDR,27.99.128.0/17,no-resolve
   - IP-CIDR,27.106.128.0/18,no-resolve
   - IP-CIDR,27.112.0.0/21,no-resolve
   - IP-CIDR,27.115.0.0/17,no-resolve
