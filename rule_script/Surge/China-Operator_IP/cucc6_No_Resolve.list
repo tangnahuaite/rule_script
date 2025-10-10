@@ -442,7 +442,7 @@ IP-CIDR6,2408:8426::/31,no-resolve
 IP-CIDR6,2408:842a::/31,no-resolve
 IP-CIDR6,2408:842c::/32,no-resolve
 IP-CIDR6,2408:842e::/32,no-resolve
-IP-CIDR6,2408:8431::/32,no-resolve
+IP-CIDR6,2408:8430::/31,no-resolve
 IP-CIDR6,2408:8434::/30,no-resolve
 IP-CIDR6,2408:8438::/31,no-resolve
 IP-CIDR6,2408:843c::/30,no-resolve
