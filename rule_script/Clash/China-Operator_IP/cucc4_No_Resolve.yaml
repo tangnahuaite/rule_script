@@ -130,6 +130,7 @@ payload:
   - IP-CIDR,43.255.200.0/22,no-resolve
   - IP-CIDR,43.255.212.0/22,no-resolve
   - IP-CIDR,45.113.24.0/22,no-resolve
+  - IP-CIDR,45.113.206.0/24,no-resolve
   - IP-CIDR,45.115.164.0/22,no-resolve
   - IP-CIDR,45.119.68.0/22,no-resolve
   - IP-CIDR,45.124.20.0/22,no-resolve
