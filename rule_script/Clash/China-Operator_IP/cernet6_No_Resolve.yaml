@@ -33,6 +33,7 @@ payload:
   - IP-CIDR6,2406:280::/32,no-resolve
   - IP-CIDR6,2406:3340::/32,no-resolve
   - IP-CIDR6,240a:a000::/21,no-resolve
+  - IP-CIDR6,240a:a801::/32,no-resolve
   - IP-CIDR6,240a:a802::/31,no-resolve
   - IP-CIDR6,240a:a804::/30,no-resolve
   - IP-CIDR6,240a:a808::/29,no-resolve
