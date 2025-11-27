@@ -7,7 +7,34 @@ payload:
   - IP-CIDR6,2407:6c40:1210::/48,no-resolve
   - IP-CIDR6,2407:8f40:2::/48,no-resolve
   - IP-CIDR6,2407:c080:1800::/37,no-resolve
-  - IP-CIDR6,2409:8000::/20,no-resolve
+  - IP-CIDR6,2409:8000::/21,no-resolve
+  - IP-CIDR6,2409:8800::/22,no-resolve
+  - IP-CIDR6,2409:8c00::/25,no-resolve
+  - IP-CIDR6,2409:8c80::/30,no-resolve
+  - IP-CIDR6,2409:8c84::/32,no-resolve
+  - IP-CIDR6,2409:8c85::/34,no-resolve
+  - IP-CIDR6,2409:8c85:4000::/36,no-resolve
+  - IP-CIDR6,2409:8c85:5000::/38,no-resolve
+  - IP-CIDR6,2409:8c85:5400::/43,no-resolve
+  - IP-CIDR6,2409:8c85:5420::/44,no-resolve
+  - IP-CIDR6,2409:8c85:5430::/47,no-resolve
+  - IP-CIDR6,2409:8c85:5433::/48,no-resolve
+  - IP-CIDR6,2409:8c85:5434::/46,no-resolve
+  - IP-CIDR6,2409:8c85:5438::/45,no-resolve
+  - IP-CIDR6,2409:8c85:5440::/42,no-resolve
+  - IP-CIDR6,2409:8c85:5480::/41,no-resolve
+  - IP-CIDR6,2409:8c85:5500::/40,no-resolve
+  - IP-CIDR6,2409:8c85:5600::/39,no-resolve
+  - IP-CIDR6,2409:8c85:5800::/37,no-resolve
+  - IP-CIDR6,2409:8c85:6000::/35,no-resolve
+  - IP-CIDR6,2409:8c85:8000::/33,no-resolve
+  - IP-CIDR6,2409:8c86::/31,no-resolve
+  - IP-CIDR6,2409:8c88::/29,no-resolve
+  - IP-CIDR6,2409:8c90::/28,no-resolve
+  - IP-CIDR6,2409:8ca0::/27,no-resolve
+  - IP-CIDR6,2409:8cc0::/26,no-resolve
+  - IP-CIDR6,2409:8d00::/24,no-resolve
+  - IP-CIDR6,2409:8e00::/23,no-resolve
   - IP-CIDR6,240a:4020:83a::/48,no-resolve
   - IP-CIDR6,240a:4020:883a::/48,no-resolve
   - IP-CIDR6,240a:4021:83a::/48,no-resolve
