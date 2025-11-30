@@ -102,7 +102,11 @@ IP-CIDR6,2406:cf00::/48,no-resolve
 IP-CIDR6,2406:cf00:1000::/43,no-resolve
 IP-CIDR6,2406:d440:210::/44,no-resolve
 IP-CIDR6,2406:d440:ff00::/48,no-resolve
-IP-CIDR6,2406:e3c0::/32,no-resolve
+IP-CIDR6,2406:e3c0::/36,no-resolve
+IP-CIDR6,2406:e3c0:1000::/37,no-resolve
+IP-CIDR6,2406:e3c0:2000::/35,no-resolve
+IP-CIDR6,2406:e3c0:4000::/34,no-resolve
+IP-CIDR6,2406:e3c0:8000::/33,no-resolve
 IP-CIDR6,2407:3740::/48,no-resolve
 IP-CIDR6,2407:6c40:1100::/48,no-resolve
 IP-CIDR6,2407:8f40:2::/48,no-resolve
