@@ -114,6 +114,7 @@ payload:
   - IP-CIDR6,2408:8120:7000::/36,no-resolve
   - IP-CIDR6,2408:8140:2000::/48,no-resolve
   - IP-CIDR6,2408:815f:e000::/35,no-resolve
+  - IP-CIDR6,2408:8181::/40,no-resolve
   - IP-CIDR6,2408:8181:6000::/40,no-resolve
   - IP-CIDR6,2408:8181:8000::/40,no-resolve
   - IP-CIDR6,2408:8181:a000::/40,no-resolve
