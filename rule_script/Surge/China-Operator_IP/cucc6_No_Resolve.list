@@ -1064,7 +1064,6 @@ IP-CIDR6,240e:c:800::/37,no-resolve
 IP-CIDR6,240e:c:1800::/37,no-resolve
 IP-CIDR6,240e:4b:c000::/37,no-resolve
 IP-CIDR6,240e:4c::/36,no-resolve
-IP-CIDR6,240e:5e:4000::/48,no-resolve
 IP-CIDR6,240e:b1:8800::/37,no-resolve
 IP-CIDR6,240e:b1:9800::/37,no-resolve
 IP-CIDR6,240e:108:10f3::/48,no-resolve
