@@ -96,7 +96,9 @@ payload:
   - IP-CIDR6,2001:250:5870::/47,no-resolve
   - IP-CIDR6,2001:250:5873::/48,no-resolve
   - IP-CIDR6,2001:250:5874::/46,no-resolve
-  - IP-CIDR6,2001:250:5878::/45,no-resolve
+  - IP-CIDR6,2001:250:5878::/47,no-resolve
+  - IP-CIDR6,2001:250:587b::/48,no-resolve
+  - IP-CIDR6,2001:250:587c::/46,no-resolve
   - IP-CIDR6,2001:250:5880::/44,no-resolve
   - IP-CIDR6,2001:250:5890::/45,no-resolve
   - IP-CIDR6,2001:250:5898::/48,no-resolve
