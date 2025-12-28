@@ -503,7 +503,6 @@ payload:
   - IP-CIDR,103.6.222.0/23,no-resolve
   - IP-CIDR,103.7.141.0/24,no-resolve
   - IP-CIDR,103.7.142.0/23,no-resolve
-  - IP-CIDR,103.8.8.0/22,no-resolve
   - IP-CIDR,103.8.33.0/24,no-resolve
   - IP-CIDR,103.8.34.0/23,no-resolve
   - IP-CIDR,103.10.0.0/22,no-resolve
