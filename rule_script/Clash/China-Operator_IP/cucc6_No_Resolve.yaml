@@ -405,8 +405,6 @@ payload:
   - IP-CIDR6,2404:7600:101::/48,no-resolve
   - IP-CIDR6,2404:c300::/32,no-resolve
   - IP-CIDR6,2404:c940::/48,no-resolve
-  - IP-CIDR6,2405:80:1::/48,no-resolve
-  - IP-CIDR6,2405:80:13::/48,no-resolve
   - IP-CIDR6,2405:6c0:2::/48,no-resolve
   - IP-CIDR6,2405:6c0:4::/48,no-resolve
   - IP-CIDR6,2405:1480:1000::/48,no-resolve
