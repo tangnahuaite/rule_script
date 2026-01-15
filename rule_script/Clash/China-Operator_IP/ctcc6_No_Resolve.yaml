@@ -1,6 +1,7 @@
 # ctcc6
 payload:
   - IP-CIDR6,2001:c68::/32,no-resolve
+  - IP-CIDR6,2001:dc7:2dff::/48,no-resolve
   - IP-CIDR6,2001:dc7:8888::/48,no-resolve
   - IP-CIDR6,2001:dc7:cd00::/48,no-resolve
   - IP-CIDR6,2001:dc7:cd02::/47,no-resolve
