@@ -34,6 +34,7 @@ payload:
   - IP-CIDR6,2402:6e80::/32,no-resolve
   - IP-CIDR6,2402:8bc0::/32,no-resolve
   - IP-CIDR6,2402:9a80::/32,no-resolve
+  - IP-CIDR6,2402:e880::/48,no-resolve
   - IP-CIDR6,2403:7580::/32,no-resolve
   - IP-CIDR6,2403:b400::/32,no-resolve
   - IP-CIDR6,2403:c980::/32,no-resolve
