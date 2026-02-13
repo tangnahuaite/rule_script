@@ -355,6 +355,7 @@ IP-CIDR6,2402:7d80:240::/48,no-resolve
 IP-CIDR6,2402:8cc0::/40,no-resolve
 IP-CIDR6,2402:8cc0:200::/40,no-resolve
 IP-CIDR6,2402:92c0::/48,no-resolve
+IP-CIDR6,2402:a200::/32,no-resolve
 IP-CIDR6,2402:d340::/32,no-resolve
 IP-CIDR6,2402:db40:5100::/48,no-resolve
 IP-CIDR6,2402:db40:5f00::/46,no-resolve
