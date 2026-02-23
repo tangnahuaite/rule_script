@@ -1173,6 +1173,10 @@ payload:
   - IP-CIDR,106.224.0.0/14,no-resolve
   - IP-CIDR,106.228.0.0/15,no-resolve
   - IP-CIDR,106.230.0.0/16,no-resolve
+  - IP-CIDR,107.148.240.0/21,no-resolve
+  - IP-CIDR,107.148.248.0/24,no-resolve
+  - IP-CIDR,107.148.250.0/23,no-resolve
+  - IP-CIDR,107.148.252.0/23,no-resolve
   - IP-CIDR,109.244.0.0/16,no-resolve
   - IP-CIDR,110.40.13.0/24,no-resolve
   - IP-CIDR,110.40.14.0/23,no-resolve
