@@ -416,10 +416,7 @@ IP-CIDR,114.112.136.0/21,no-resolve
 IP-CIDR,114.112.144.0/21,no-resolve
 IP-CIDR,114.113.64.0/22,no-resolve
 IP-CIDR,114.113.118.0/23,no-resolve
-IP-CIDR,114.113.144.0/22,no-resolve
-IP-CIDR,114.113.148.0/24,no-resolve
-IP-CIDR,114.113.150.0/23,no-resolve
-IP-CIDR,114.113.152.0/21,no-resolve
+IP-CIDR,114.113.144.0/20,no-resolve
 IP-CIDR,114.113.224.0/20,no-resolve
 IP-CIDR,114.115.192.0/19,no-resolve
 IP-CIDR,114.116.0.0/18,no-resolve
