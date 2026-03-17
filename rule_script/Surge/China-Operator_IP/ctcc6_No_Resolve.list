@@ -117,9 +117,13 @@ IP-CIDR6,2402:840:f000::/38,no-resolve
 IP-CIDR6,2402:c60::/48,no-resolve
 IP-CIDR6,2402:36e0::/44,no-resolve
 IP-CIDR6,2402:4e00:1800::/40,no-resolve
+IP-CIDR6,2402:4e00:1a00::/40,no-resolve
 IP-CIDR6,2402:4e00:4070::/44,no-resolve
 IP-CIDR6,2402:4e00:8000::/47,no-resolve
+IP-CIDR6,2402:4e00:c000::/48,no-resolve
 IP-CIDR6,2402:4e00:c020::/44,no-resolve
+IP-CIDR6,2402:4e00:c040::/44,no-resolve
+IP-CIDR6,2402:4e00:c060::/43,no-resolve
 IP-CIDR6,2402:5ec0::/32,no-resolve
 IP-CIDR6,2402:7d80::/48,no-resolve
 IP-CIDR6,2402:7d80:8888::/48,no-resolve
