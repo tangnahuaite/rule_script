@@ -182,6 +182,7 @@ payload:
   - IP-CIDR6,2404:7600:2000::/35,no-resolve
   - IP-CIDR6,2404:7600:4000::/34,no-resolve
   - IP-CIDR6,2404:7600:8000::/33,no-resolve
+  - IP-CIDR6,2404:7cc0:7f04::/47,no-resolve
   - IP-CIDR6,2404:e8c0::/32,no-resolve
   - IP-CIDR6,2405:1480:1000::/48,no-resolve
   - IP-CIDR6,2405:1480:2000::/48,no-resolve
