@@ -638,7 +638,6 @@ payload:
   - IP-CIDR6,240a:4230::/31,no-resolve
   - IP-CIDR6,240a:4242::/31,no-resolve
   - IP-CIDR6,240a:6001::/48,no-resolve
-  - IP-CIDR6,240a:c0c0::/32,no-resolve
   - IP-CIDR6,240c:4000::/25,no-resolve
   - IP-CIDR6,240c:4080::/28,no-resolve
   - IP-CIDR6,240c:4090::/29,no-resolve

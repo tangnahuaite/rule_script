@@ -15,6 +15,7 @@ payload:
   - IP-CIDR6,2400:6600::/48,no-resolve
   - IP-CIDR6,2400:89c0:1130::/44,no-resolve
   - IP-CIDR6,2400:89c0:2100::/48,no-resolve
+  - IP-CIDR6,2400:89c0:2200::/48,no-resolve
   - IP-CIDR6,2400:89c0:6100::/48,no-resolve
   - IP-CIDR6,2400:a980::/29,no-resolve
   - IP-CIDR6,2400:b600::/32,no-resolve
