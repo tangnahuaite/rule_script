@@ -1222,6 +1222,7 @@ IP-CIDR6,240b:e004::/30,no-resolve
 IP-CIDR6,240b:e008::/29,no-resolve
 IP-CIDR6,240b:e010::/32,no-resolve
 IP-CIDR6,240c:409f:4::/46,no-resolve
+IP-CIDR6,240c:409f:4004::/46,no-resolve
 IP-CIDR6,240c:c001::/32,no-resolve
 IP-CIDR6,240c:c017::/32,no-resolve
 IP-CIDR6,240c:c018::/32,no-resolve
