@@ -109,6 +109,7 @@ payload:
   - IP-CIDR6,2001:250:507a::/48,no-resolve
   - IP-CIDR6,2001:250:507c::/46,no-resolve
   - IP-CIDR6,2001:250:5080::/48,no-resolve
+  - IP-CIDR6,2001:250:5083::/48,no-resolve
   - IP-CIDR6,2001:250:5400::/43,no-resolve
   - IP-CIDR6,2001:250:5420::/45,no-resolve
   - IP-CIDR6,2001:250:5428::/47,no-resolve
@@ -1147,6 +1148,7 @@ payload:
   - IP-CIDR6,2408:8878::/31,no-resolve
   - IP-CIDR6,2408:887e::/32,no-resolve
   - IP-CIDR6,2408:8906:20::/44,no-resolve
+  - IP-CIDR6,2408:8906:40::/43,no-resolve
   - IP-CIDR6,2408:8907:9000::/44,no-resolve
   - IP-CIDR6,2408:890c::/31,no-resolve
   - IP-CIDR6,2408:8912::/31,no-resolve
