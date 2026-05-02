@@ -518,6 +518,7 @@ payload:
   - IP-CIDR6,2402:840:e000::/46,no-resolve
   - IP-CIDR6,2402:840:f000::/38,no-resolve
   - IP-CIDR6,2402:c60::/48,no-resolve
+  - IP-CIDR6,2402:2e60::/39,no-resolve
   - IP-CIDR6,2402:34e0::/32,no-resolve
   - IP-CIDR6,2402:36e0::/44,no-resolve
   - IP-CIDR6,2402:4440:9000::/39,no-resolve
