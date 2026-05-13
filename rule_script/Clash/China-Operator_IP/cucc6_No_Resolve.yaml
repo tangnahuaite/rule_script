@@ -83,6 +83,8 @@ payload:
   - IP-CIDR6,2001:250:3c25::/48,no-resolve
   - IP-CIDR6,2001:250:3c26::/48,no-resolve
   - IP-CIDR6,2001:250:4038::/48,no-resolve
+  - IP-CIDR6,2001:250:4857::/48,no-resolve
+  - IP-CIDR6,2001:250:4858::/48,no-resolve
   - IP-CIDR6,2001:250:5002::/47,no-resolve
   - IP-CIDR6,2001:250:5004::/46,no-resolve
   - IP-CIDR6,2001:250:5008::/45,no-resolve
