@@ -1,4 +1,19 @@
 # cmcc6
+IP-CIDR6,2400:5a60:8001::/48,no-resolve
+IP-CIDR6,2400:5a60:8002::/47,no-resolve
+IP-CIDR6,2400:5a60:8004::/46,no-resolve
+IP-CIDR6,2400:5a60:8008::/45,no-resolve
+IP-CIDR6,2400:5a60:8010::/44,no-resolve
+IP-CIDR6,2400:5a60:8020::/43,no-resolve
+IP-CIDR6,2400:5a60:8040::/42,no-resolve
+IP-CIDR6,2400:5a60:8080::/41,no-resolve
+IP-CIDR6,2400:5a60:8100::/40,no-resolve
+IP-CIDR6,2400:5a60:8200::/39,no-resolve
+IP-CIDR6,2400:5a60:8400::/38,no-resolve
+IP-CIDR6,2400:5a60:8800::/37,no-resolve
+IP-CIDR6,2400:5a60:9000::/36,no-resolve
+IP-CIDR6,2400:5a60:a000::/35,no-resolve
+IP-CIDR6,2400:5a60:c000::/34,no-resolve
 IP-CIDR6,2400:9020:f012::/47,no-resolve
 IP-CIDR6,2400:95e0::/48,no-resolve
 IP-CIDR6,2400:a860:1::/48,no-resolve
