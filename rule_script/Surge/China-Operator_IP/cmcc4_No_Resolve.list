@@ -770,6 +770,8 @@ IP-CIDR,123.186.144.0/20,no-resolve
 IP-CIDR,123.196.112.0/20,no-resolve
 IP-CIDR,123.245.192.0/20,no-resolve
 IP-CIDR,123.246.96.0/20,no-resolve
+IP-CIDR,124.14.15.0/24,no-resolve
+IP-CIDR,124.14.22.0/24,no-resolve
 IP-CIDR,124.201.0.0/17,no-resolve
 IP-CIDR,124.202.128.0/24,no-resolve
 IP-CIDR,124.202.130.0/23,no-resolve
