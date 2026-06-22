@@ -69,3 +69,5 @@ payload:
 # BaiDu
   - DOMAIN,passport.baidu.com
   - DOMAIN,zt.baidu.com
+# xiaomi
+  - DOMAIN-SUFFIX,miwifi.com
