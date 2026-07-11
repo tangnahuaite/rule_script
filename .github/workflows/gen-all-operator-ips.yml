@@ -98,7 +98,7 @@ jobs:
 
 
 
-          # ChinaMax Domain
+          # China Domain
 
           curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/ChinaMax/ChinaMax_Domain.yaml \
           -o source/ChinaMax_Domain.yaml
@@ -128,10 +128,9 @@ jobs:
 
 
           mkdir -p rule_script/Mihomo/China-Operator_IP
-          mkdir -p rule_script/Mihomo/China-Operator_Domain
+          mkdir -p rule_script/Mihomo/China_Domain
 
           mkdir -p rule_script/Clash/China-Operator_IP
-
           mkdir -p rule_script/Surge/China-Operator_IP
 
 
@@ -277,14 +276,14 @@ jobs:
 
 
 
-
           echo "Generate ChinaMax_Domain.mrs"
 
 
 
           make_domain_mrs \
           source/ChinaMax_Domain.yaml \
-          rule_script/Mihomo/China-Operator_Domain/ChinaMax_Domain.mrs
+          rule_script/Mihomo/China_Domain/ChinaMax_Domain.mrs
+
 
 
 
