@@ -26,6 +26,7 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
 
+
       - name: Install mihomo
         run: |
 
@@ -41,9 +42,7 @@ jobs:
 
           gunzip mihomo.gz
 
-
           chmod +x mihomo
-
 
           sudo mv mihomo /usr/local/bin/mihomo
 
@@ -98,10 +97,17 @@ jobs:
 
 
 
-          # China Domain
+          # ChinaMax Domain
 
           curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/ChinaMax/ChinaMax_Domain.yaml \
           -o source/ChinaMax_Domain.yaml
+
+
+
+          # ChinaMax IP
+
+          curl -sL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/ChinaMax/ChinaMax_IP.yaml \
+          -o source/ChinaMax_IP.yaml
 
 
 
@@ -122,16 +128,20 @@ jobs:
 
 
 
+
       - name: Generate YAML LIST MRS
         shell: bash
         run: |
 
 
           mkdir -p rule_script/Mihomo/China-Operator_IP
+          mkdir -p rule_script/Mihomo/China_IP
           mkdir -p rule_script/Mihomo/China_Domain
+
 
           mkdir -p rule_script/Clash/China-Operator_IP
           mkdir -p rule_script/Surge/China-Operator_IP
+
 
 
 
@@ -158,6 +168,7 @@ jobs:
 
 
 
+
           make_list()
           {
 
@@ -177,6 +188,7 @@ jobs:
             done < "$input"
 
           }
+
 
 
 
@@ -210,6 +222,7 @@ jobs:
 
 
 
+
           make_domain_mrs()
           {
 
@@ -224,6 +237,24 @@ jobs:
 
 
 
+
+          make_ip_yaml_mrs()
+          {
+
+            input="$1"
+            output="$2"
+
+
+            mihomo convert-ruleset ipcidr yaml "$input" "$output"
+
+          }
+
+
+
+
+
+
+          # Operator IP
 
           for file in source/*.txt
 
@@ -251,18 +282,14 @@ jobs:
               "rule_script/Surge/China-Operator_IP/${name}.list" \
               "IP-CIDR6"
 
-
             else
-
 
               make_list \
               "$file" \
               "rule_script/Surge/China-Operator_IP/${name}.list" \
               "IP-CIDR"
 
-
             fi
-
 
 
 
@@ -276,13 +303,31 @@ jobs:
 
 
 
-          echo "Generate ChinaMax_Domain.mrs"
 
+
+          # ChinaMax Domain
+
+          echo "Generate ChinaMax_Domain.mrs"
 
 
           make_domain_mrs \
           source/ChinaMax_Domain.yaml \
           rule_script/Mihomo/China_Domain/ChinaMax_Domain.mrs
+
+
+
+
+
+
+          # ChinaMax IP
+
+          echo "Generate ChinaMax_IP.mrs"
+
+
+          make_ip_yaml_mrs \
+          source/ChinaMax_IP.yaml \
+          rule_script/Mihomo/China_IP/ChinaMax_IP.mrs
+
 
 
 
