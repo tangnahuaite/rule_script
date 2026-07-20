@@ -309,7 +309,9 @@ IP-CIDR6,2001:da8:a002::/48,no-resolve
 IP-CIDR6,2001:da8:a005::/48,no-resolve
 IP-CIDR6,2001:da8:a006::/47,no-resolve
 IP-CIDR6,2001:da8:a008::/45,no-resolve
-IP-CIDR6,2001:da8:a010::/45,no-resolve
+IP-CIDR6,2001:da8:a010::/47,no-resolve
+IP-CIDR6,2001:da8:a013::/48,no-resolve
+IP-CIDR6,2001:da8:a014::/46,no-resolve
 IP-CIDR6,2001:da8:a018::/46,no-resolve
 IP-CIDR6,2001:da8:a01c::/48,no-resolve
 IP-CIDR6,2001:da8:a01e::/47,no-resolve
