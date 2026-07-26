@@ -566,6 +566,7 @@ IP-CIDR6,2402:7d80::/48,no-resolve
 IP-CIDR6,2402:7d80:8888::/48,no-resolve
 IP-CIDR6,2402:92c0::/48,no-resolve
 IP-CIDR6,2402:93c0::/48,no-resolve
+IP-CIDR6,2402:93c0:20::/48,no-resolve
 IP-CIDR6,2402:db40:5100::/48,no-resolve
 IP-CIDR6,2402:db40:5f00::/46,no-resolve
 IP-CIDR6,2402:e7c0:400::/42,no-resolve
