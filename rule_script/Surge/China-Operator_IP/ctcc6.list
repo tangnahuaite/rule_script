@@ -24,6 +24,7 @@ IP-CIDR6,2001:250:23c::/47,no-resolve
 IP-CIDR6,2001:250:248::/48,no-resolve
 IP-CIDR6,2001:250:24f::/48,no-resolve
 IP-CIDR6,2001:250:251::/48,no-resolve
+IP-CIDR6,2001:250:252::/48,no-resolve
 IP-CIDR6,2001:250:401::/48,no-resolve
 IP-CIDR6,2001:250:402::/47,no-resolve
 IP-CIDR6,2001:250:404::/46,no-resolve
