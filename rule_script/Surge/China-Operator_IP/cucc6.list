@@ -1221,8 +1221,9 @@ IP-CIDR6,240a:a020::/30,no-resolve
 IP-CIDR6,240a:a024::/31,no-resolve
 IP-CIDR6,240a:a026::/32,no-resolve
 IP-CIDR6,240a:a027::/48,no-resolve
-IP-CIDR6,240a:a027:a::/47,no-resolve
-IP-CIDR6,240a:a027:c::/46,no-resolve
+IP-CIDR6,240a:a027:3::/48,no-resolve
+IP-CIDR6,240a:a027:4::/46,no-resolve
+IP-CIDR6,240a:a027:8::/45,no-resolve
 IP-CIDR6,240a:a027:10::/44,no-resolve
 IP-CIDR6,240a:a027:20::/43,no-resolve
 IP-CIDR6,240a:a027:40::/42,no-resolve
