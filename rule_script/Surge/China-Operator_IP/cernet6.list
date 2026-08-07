@@ -61,7 +61,6 @@ IP-CIDR6,2401:7e00:ff80::/42,no-resolve
 IP-CIDR6,2401:7e00:ffc0::/43,no-resolve
 IP-CIDR6,2401:7e00:ffe0::/44,no-resolve
 IP-CIDR6,2401:7e00:fff0::/45,no-resolve
-IP-CIDR6,2401:7e00:ffff::/48,no-resolve
 IP-CIDR6,2401:be00::/32,no-resolve
 IP-CIDR6,2401:cc00::/32,no-resolve
 IP-CIDR6,2401:ec00::/32,no-resolve
