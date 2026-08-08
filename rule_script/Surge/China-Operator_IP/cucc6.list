@@ -27,6 +27,7 @@ IP-CIDR6,2001:250:24f::/48,no-resolve
 IP-CIDR6,2001:250:251::/48,no-resolve
 IP-CIDR6,2001:250:252::/48,no-resolve
 IP-CIDR6,2001:250:803::/48,no-resolve
+IP-CIDR6,2001:250:1016::/48,no-resolve
 IP-CIDR6,2001:250:101f::/48,no-resolve
 IP-CIDR6,2001:250:3000::/44,no-resolve
 IP-CIDR6,2001:250:3010::/48,no-resolve
@@ -790,7 +791,7 @@ IP-CIDR6,2408:8406:a900::/41,no-resolve
 IP-CIDR6,2408:8406:a980::/42,no-resolve
 IP-CIDR6,2408:8406:b500::/41,no-resolve
 IP-CIDR6,2408:8406:b580::/42,no-resolve
-IP-CIDR6,2408:8407:500::/42,no-resolve
+IP-CIDR6,2408:8407:520::/43,no-resolve
 IP-CIDR6,2408:8409::/40,no-resolve
 IP-CIDR6,2408:8409:100::/41,no-resolve
 IP-CIDR6,2408:8409:1a0::/43,no-resolve
