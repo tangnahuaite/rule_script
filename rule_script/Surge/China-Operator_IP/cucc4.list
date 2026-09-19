@@ -1068,6 +1068,7 @@ IP-CIDR,139.226.0.0/15,no-resolve
 IP-CIDR,140.179.224.0/19,no-resolve
 IP-CIDR,140.206.0.0/15,no-resolve
 IP-CIDR,140.210.32.0/22,no-resolve
+IP-CIDR,140.210.40.0/23,no-resolve
 IP-CIDR,140.210.65.0/24,no-resolve
 IP-CIDR,140.210.67.0/24,no-resolve
 IP-CIDR,140.210.69.0/24,no-resolve
