@@ -13,6 +13,8 @@ IP-CIDR,1.188.0.0/14,no-resolve
 IP-CIDR,8.132.106.0/24,no-resolve
 IP-CIDR,8.137.133.0/24,no-resolve
 IP-CIDR,8.138.70.0/24,no-resolve
+IP-CIDR,8.141.192.0/22,no-resolve
+IP-CIDR,8.141.200.0/21,no-resolve
 IP-CIDR,8.152.180.0/24,no-resolve
 IP-CIDR,8.155.198.0/24,no-resolve
 IP-CIDR,14.204.0.0/15,no-resolve
