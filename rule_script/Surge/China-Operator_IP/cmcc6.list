@@ -62,8 +62,6 @@ IP-CIDR6,2407:37c0::/32,no-resolve
 IP-CIDR6,2407:6c40:1210::/48,no-resolve
 IP-CIDR6,2407:8f40:2::/48,no-resolve
 IP-CIDR6,2407:c080:1800::/37,no-resolve
-IP-CIDR6,2409:27fa::/48,no-resolve
-IP-CIDR6,2409:27fa:f000::/48,no-resolve
 IP-CIDR6,2409:27fc::/48,no-resolve
 IP-CIDR6,2409:8000::/20,no-resolve
 IP-CIDR6,240a:2000:100::/40,no-resolve
