@@ -1215,6 +1215,7 @@ IP-CIDR,163.177.0.0/16,no-resolve
 IP-CIDR,163.179.0.0/16,no-resolve
 IP-CIDR,163.204.0.0/16,no-resolve
 IP-CIDR,165.101.70.0/24,no-resolve
+IP-CIDR,169.40.208.0/22,no-resolve
 IP-CIDR,171.34.0.0/15,no-resolve
 IP-CIDR,171.36.0.0/14,no-resolve
 IP-CIDR,171.116.0.0/14,no-resolve
